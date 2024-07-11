@@ -1,32 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>My test page</title>
-    <link href="styles/style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-  </head>
-  <body>
-    <h1>Mozilla is cool</h1>
-    <img src="https://th.bing.com/th/id/OIP.sS6n5eh_Yc61OaOW6e1cDAHaHG?pid=ImgDet&rs=1" alt="The Firefox logo: a flaming fox surrounding the Earth.">
+    <title>吃豆人</title>
+    <link rel="icon" href="https://www.webretrogames.com/assets/img/pacman-logo-wide.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
 
-    <p>At Mozilla, we’re a global community of</p>
+        .mod-game {
+            width: 960px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
-    <ul> <!-- changed to list in the tutorial -->
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
+        .mod-game h1 {
+            color: #333;
+            text-align: center;
+        }
 
-    <p>working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. 
-      We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
+        .mod-game p {
+            color: #666;
+            text-align: center;
+        }
 
-    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a> 
-      to learn even more about the values and principles that guide the pursuit of our mission.</p>
+        canvas {
+            display: block;
+            background: #000;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
 
-    <button>切换用户</button>
+        .info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
+        .info p {
+            color: #999;
+        }
 
-    <script src="scripts/main.js" defer></script>
-  </body>
+        .controls {
+            text-align: center;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mod-game">
+        <h1>Pacman</h1>
+        <p>使用方向键来移动吃豆人，避开幽灵，吃掉所有的豆子!</p>
+        <!-- 主体画布用以呈现游戏！ -->
+        <canvas id="game-canvas" width="960" height="640">
+            不支持画布！
+        </canvas>
+        <div class="info">
+            <p>按空格键暂停或继续！</p>
+        </div>
+        <div class="controls">
+            <button id="start-button">开始游戏</button>
+            <button id="pause-button">暂停游戏</button>
+            <button id="reset-button">重新开始</button>
+        </div>
+    </div>
+    <!-- js文件用以控制交互 -->
+    <script src="game.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
 </html>
